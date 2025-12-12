@@ -1079,3 +1079,33 @@ body {
         font-size: 16px;
     }
 }
+
+/* Media Query per schermi piccoli (cellulari) */
+@media (max-width: 768px) {
+    
+    /* 1. Assicuriamo che la sezione Hero sia il punto di riferimento */
+    .hero-section {
+        /* Se non è già impostato, assicuriamoci che sia il contenitore di riferimento per l'immagine */
+        position: relative; 
+        /* Diamo un'altezza minima per vedere bene l'immagine */
+        min-height: 50vh; /* 50% dell'altezza dello schermo (viewport height) */
+        overflow: hidden;
+    }
+
+    /* 2. Regole definitive per l'immagine prima_imm.jpg */
+    .hero-background-image {
+        /* Sovrascriviamo qualsiasi altra regola per queste proprietà */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;       /* Deve occupare tutta la larghezza */
+        height: 100%;      /* Deve occupare tutta l'altezza */
+        
+        /* Object-fit assicura che l'immagine copra TUTTO lo spazio senza lasciare vuoti, 
+           tagliando i bordi se necessario. */
+        object-fit: cover !important; 
+        
+        /* z-index assicura che l'immagine rimanga dietro il titolo H1 */
+        z-index: -1;
+    }
+}
