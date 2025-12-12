@@ -1380,16 +1380,15 @@ body {
     }
 
     .protettore-description {
-        /* Azzeriamo i margini laterali fissi che limitavano lo spazio */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        
-        /* Aggiungiamo un padding per non incollare il testo ai bordi dello schermo */
-        padding: 0 90px; 
-        
-        /* Assicuriamo l'allineamento a sinistra (per coerenza) */
+        /* Riduci o azzera i margini laterali fissi */
+        margin-left: 0px; 
+        margin-right: 0px;
+        /* Assicurati che sia allineato a sinistra */
         text-align: left;
-    }
+        
+        /* Aumenta la larghezza massima per dargli più spazio */
+        max-width: 100%; 
+        width: auto;
     }
 
     .hero-background-image {
@@ -1458,7 +1457,7 @@ body {
     
     /* ... il resto del tuo codice esistente ... */
     }
-
+}
 
 
 
