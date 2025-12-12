@@ -33,6 +33,15 @@ body {
     color: #F1AD2B; 
 }
 
+/* Mostra solo "Boni Chiara" su desktop, nascondi "BC" */
+.logo-mobile {
+    display: none;
+}
+
+.logo-desktop {
+    display: inline;
+}
+
 /* Stili del contenitore (LISTA) della Navigazione */
 .nav-links {
     list-style: none;
@@ -69,6 +78,26 @@ body {
     /* 2. Appare e si allarga lo sfondo ovale/ellisse */
     background-color: #F1AD2B; 
     border-radius: 10px; /* Rende la forma arrotondata (ellisse/ovale) */
+}
+
+/* Stili Menu Hamburger */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #712F26;
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -820,6 +849,7 @@ body {
     color: #FFFFFF; /* Diventa Bianco per evidenziare l'interazione */
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); 
 }
+
 /* --- RESPONSIVITÀ (MEDIA QUERIES) --- */
 
 /* 1. LAYOUT PER TABLET (Max 1024px) */
@@ -865,292 +895,5 @@ body {
     .hobby-gallery-container {
         flex-wrap: wrap;
         justify-content: center;
-    }
-    
-    .hobby-item {
-        flex: 1 1 45%; /* Due colonne per riga */
-    }
-
-    /* Sezione Portfolio (Passa a 2 colonne) */
-    .portfolio-gallery-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .portfolio-item {
-        flex: 1 1 45%; 
-        max-width: 45%;
-    }
-
-    /* Sezione Nicla (Passa a Layout verticale) */
-    .nicla-header-container {
-        flex-direction: column;
-        margin-bottom: 50px;
-    }
-    
-    .nicla-text-content {
-        padding-right: 0;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    
-    .nicla-image-wrapper {
-        width: 60%;
-        height: 300px;
-    }
-
-    /* Nicla Steps (Passa a 2 colonne) */
-    .nicla-steps-gallery {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .nicla-step-item {
-        flex: 1 1 45%;
-    }
-
-    /* Sezione Protettore (Passa a 2 colonne) */
-    .protettore-gallery {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .protettore-image-item {
-        flex: 1 1 45%;
-        height: 300px;
-    }
-
-    /* Sezione Hubstoria (Passa a Layout verticale) */
-    .hubstoria-header {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .hubstoria-image-left {
-        width: 60%;
-        margin: 0 auto;
-    }
-
-    /* Hubstoria Gallery (Passa a 2 colonne) */
-    .hubstoria-gallery-bottom {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .hubstoria-gallery-item {
-        flex: 1 1 45%;
-    }
-
-    /* Footer */
-    .main-footer {
-        padding: 40px 20px;
-    }
-}
-
-
-/* 2. LAYOUT PER SMARTPHONE (Max 600px) */
-@media (max-width: 600px) {
-    
-    /* Header e Navigazione */
-    .main-header {
-        height: auto;
-        flex-direction: column;
-        padding-bottom: 10px;
-    }
-
-    .logo {
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-    
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        height: auto;
-    }
-
-    /* Hero */
-    .main-title {
-        font-size: 30px;
-        padding: 10px;
-    }
-    
-    /* Titoli e Testo Generici */
-    .section-title, .hobby-main-title, .portfolio-main-title, .nicla-title, .short-film-title, .protettore-title, .hubstoria-title {
-        font-size: 30px;
-    }
-
-    .section-text, .origins-text, .nicla-step-text, .protettore-text, .hubstoria-description, .hubstoria-step-text {
-        font-size: 16px;
-    }
-
-    /* Sezione Origini */
-    .origins-text-block {
-        padding: 50px 20px;
-    }
-
-    /* Sezione Hobby (Passa a 1 colonna) */
-    .hobby-item {
-        flex: 1 1 100%; /* Una colonna per riga */
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    /* Sezione Portfolio (Passa a 1 colonna) */
-    .portfolio-item {
-        flex: 1 1 100%; 
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-    
-    /* Nicla Header */
-    .nicla-image-wrapper {
-        width: 100%;
-    }
-
-    /* Nicla Steps (Passa a 1 colonna) */
-    .nicla-steps-gallery {
-        gap: 20px;
-    }
-    
-    .nicla-step-item {
-        flex: 1 1 100%;
-    }
-    
-    /* Sezione Cortometraggio */
-    .top-half, .bottom-half {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-    
-    .short-film-image {
-        height: 350px;
-    }
-    
-    .short-film-text {
-        padding: 0 20px;
-    }
-
-    /* Sezione Protettore (Passa a 1 colonna) */
-    .protettore-gallery {
-        gap: 15px;
-    }
-
-    .protettore-image-item {
-        flex: 1 1 100%;
-        height: 250px;
-    }
-
-    /* Sezione Hubstoria */
-    .hubstoria-image-left {
-        width: 100%;
-    }
-    
-    .hubstoria-full-width-image {
-        margin-bottom: 60px;
-        margin-top: 60px;
-    }
-    
-    /* Hubstoria Gallery (Passa a 1 colonna) */
-    .hubstoria-gallery-bottom {
-        gap: 20px;
-    }
-    
-    .hubstoria-gallery-item {
-        flex: 1 1 100%;
-    }
-
-    /* Footer (Layout verticale) */
-    .main-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 30px 20px;
-    }
-    
-    .footer-left {
-        margin-bottom: 20px;
-    }
-
-    .footer-right {
-        text-align: left;
-    }
-
-    .footer-contact, .footer-location {
-        font-size: 16px;
-    }
-}
-
-/* --- STILI MENU HAMBURGER E MOBILE --- */
-
-/* Nasconde il pulsante hamburger su desktop */
-.hamburger-menu {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001; /* Alto z-index per essere sempre in primo piano */
-}
-
-.hamburger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #712F26; /* Colore scuro, come il tuo testo */
-    transition: all 0.3s ease-in-out;
-}
-
-/* Modifiche per l'header su mobile */
-@media (max-width: 768px) {
-    
-    .main-header {
-        /* Assicuriamo che gli elementi siano separati e allineati */
-        justify-content: space-between; 
-        padding: 15px 20px;
-        align-items: center;
-    }
-    
-    /* 1. Mostra il pulsante hamburger */
-    .hamburger-menu {
-        display: block; 
-    }
-    
-    /* 2. Nasconde il menu di navigazione principale */
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh; /* Copre tutta l'altezza dello schermo */
-        background-color: #F1AD2B; /* Colore di sfondo mobile, puoi cambiarlo */
-        z-index: 1000;
-        /* La chiave: Nascondi il menu e spostalo fuori dallo schermo */
-        transform: translateX(100%); 
-        transition: transform 0.3s ease-in-out;
-        display: flex; /* Centra i link al suo interno */
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    /* 3. Stile per i link all'interno del menu mobile */
-    .nav-menu .nav-links {
-        flex-direction: column;
-        text-align: center;
-        padding: 0;
-    }
-    
-    .nav-menu .nav-links li {
-        margin: 20px 0;
-    }
-
-    .nav-menu .nav-links .nav-item {
-        font-size: 28px;
-    }
-
-    /* CLASSE ATTIVA (MOSTRA IL MENU) */
-    .nav-menu.active {
-        transform: translateX(0); /* Lo riporta sullo schermo */
     }
 }
