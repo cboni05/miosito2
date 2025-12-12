@@ -21,17 +21,22 @@
     
 
     <header class="main-header">
-        <div class="logo">Boni Chiara</div>
-        
-        <nav> 
-            <ul class="nav-links">
-                <li><a class="nav-item" href="#chi-sono">Chi sono</a></li>
-                <li><a class="nav-item" href="#origini">Origini</a></li>
-                <li><a class="nav-item" href="#hobby">Hobby</a></li>
-                <li><a class="nav-item" href="#portfolio">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="logo">Boni Chiara</div>
+    
+    <button class="hamburger-menu" aria-label="Menu di navigazione">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    
+    <nav class="nav-menu"> <ul class="nav-links">
+            <li><a class="nav-item" href="#chi-sono">Chi sono</a></li>
+            <li><a class="nav-item" href="#origini">Origini</a></li>
+            <li><a class="nav-item" href="#hobby">Hobby</a></li>
+            <li><a class="nav-item" href="#portfolio">Portfolio</a></li>
+        </ul>
+    </nav>
+</header>
 
    <section class="hero-section">
         
@@ -316,6 +321,33 @@ questo processo è stato ripetuto 4 volte.</p>
         </div>
         
     </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.nav-menu');
 
+        hamburger.addEventListener('click', () => {
+            // Aggiunge/rimuove la classe 'active' sia al menu che al pulsante
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Opzionale: Previene lo scroll della pagina quando il menu è aperto
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Chiude il menu quando si clicca su un link
+        document.querySelectorAll('.nav-item').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }));
+    });
+</script>
+<style>
+/* Se hai aggiunto l'opzione no-scroll in JS, devi aggiungere questo CSS */
+.no-scroll {
+    overflow: hidden;
+}
+</style>
 </body>
 </html>

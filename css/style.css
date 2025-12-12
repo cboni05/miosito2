@@ -1080,32 +1080,77 @@ body {
     }
 }
 
-/* Media Query per schermi piccoli (cellulari) */
+/* --- STILI MENU HAMBURGER E MOBILE --- */
+
+/* Nasconde il pulsante hamburger su desktop */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Alto z-index per essere sempre in primo piano */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #712F26; /* Colore scuro, come il tuo testo */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Modifiche per l'header su mobile */
 @media (max-width: 768px) {
     
-    /* 1. Assicuriamo che la sezione Hero sia il punto di riferimento */
-    .hero-section {
-        /* Se non è già impostato, assicuriamoci che sia il contenitore di riferimento per l'immagine */
-        position: relative; 
-        /* Diamo un'altezza minima per vedere bene l'immagine */
-        min-height: 50vh; /* 50% dell'altezza dello schermo (viewport height) */
-        overflow: hidden;
+    .main-header {
+        /* Assicuriamo che gli elementi siano separati e allineati */
+        justify-content: space-between; 
+        padding: 15px 20px;
+        align-items: center;
+    }
+    
+    /* 1. Mostra il pulsante hamburger */
+    .hamburger-menu {
+        display: block; 
+    }
+    
+    /* 2. Nasconde il menu di navigazione principale */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh; /* Copre tutta l'altezza dello schermo */
+        background-color: #F1AD2B; /* Colore di sfondo mobile, puoi cambiarlo */
+        z-index: 1000;
+        /* La chiave: Nascondi il menu e spostalo fuori dallo schermo */
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
+        display: flex; /* Centra i link al suo interno */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
-    /* 2. Regole definitive per l'immagine prima_imm.jpg */
-    .hero-background-image {
-        /* Sovrascriviamo qualsiasi altra regola per queste proprietà */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;       /* Deve occupare tutta la larghezza */
-        height: 100%;      /* Deve occupare tutta l'altezza */
-        
-        /* Object-fit assicura che l'immagine copra TUTTO lo spazio senza lasciare vuoti, 
-           tagliando i bordi se necessario. */
-        object-fit: cover !important; 
-        
-        /* z-index assicura che l'immagine rimanga dietro il titolo H1 */
-        z-index: -1;
+    /* 3. Stile per i link all'interno del menu mobile */
+    .nav-menu .nav-links {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .nav-menu .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-menu .nav-links .nav-item {
+        font-size: 28px;
+    }
+
+    /* CLASSE ATTIVA (MOSTRA IL MENU) */
+    .nav-menu.active {
+        transform: translateX(0); /* Lo riporta sullo schermo */
     }
 }
