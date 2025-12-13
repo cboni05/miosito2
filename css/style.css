@@ -1450,13 +1450,11 @@ body {
     text-align: center;
     padding: 0;
     
-    white-space: nowrap; /* Forza la singola riga */
+    white-space: nowrap !important; /* Forza la singola riga */
     
     overflow: hidden; /* Nasconde ciò che esce dal contenitore */
     text-overflow: ellipsis; /* Aggiunge "..." alla fine del testo tagliato (opzionale, ma consigliato) */
-    
-    max-width: 100%;
-    margin: 0 auto 5px auto; 
+
 
     }
 
