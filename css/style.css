@@ -27,6 +27,18 @@ body {
     border-bottom: 1px solid #eee;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    cursor: default;
+    
+    /* CORREZIONE PER LA SCROLLBAR LATERALE SU MOBILE */
+    overflow-x: hidden; 
+    /* Questo impedisce che la pagina si muova orizzontalmente se un elemento straborda */
+}
+
 .logo {
     font-family: 'Abril Fatface', serif;
     font-size: 30px;
@@ -1406,46 +1418,54 @@ body {
     }
 
     /* 1. Aria intorno al TITOLO (senza mandarlo a capo) */
-    .short-film-title {
-        /* Aggiungiamo padding orizzontale al titolo per dargli aria. 
-           'white-space: nowrap;' impedisce al testo di andare a capo, 
-           ma dobbiamo rimuovere questa proprietà se non è strettamente necessario 
-           e fidarci del font-size ridotto per la visualizzazione */
-        padding: 0 10px; /* Piccolo padding laterale */
-        /* Aggiungiamo 'min-width' per assicurare che il titolo stia in una riga. */
-        display: inline-block;
-        white-space: nowrap; /* Impedisce il 'a capo' */
-        max-width: 95%; /* Limite massimo per non forzare troppo */
+   .short-film-title {
+        /* Rimuovi: padding: 0 10px; */
+        padding: 0; /* Rimuovi qualsiasi padding laterale dal titolo */
+        
+        /* Rimuovi: display: inline-block; */
+        /* Rimuovi: white-space: nowrap; <--- ERA IL PROBLEMA PRINCIPALE! */
+        white-space: normal; /* Permette al testo di andare a capo se necessario */
+        max-width: 100%; /* Assicura che non forzi la larghezza */
+        text-align: center; /* Mantieni il testo centrato */
     }
 
-    /* 2. Allinea il TESTO descrittivo a sinistra */
     .short-film-content-wrapper.bottom-half .short-film-text {
         text-align: left; /* Allinea il testo a sinistra */
-        padding: 0 20px; /* Aggiungi padding laterale per staccarlo dai bordi */
-        max-width: none; /* Rimuovi la limitazione di larghezza (max-width: 900px) per l'allineamento su mobile */
-        width: 100%; /* Assicura che occupi la larghezza piena */
-        margin: 0; /* Rimuovi i margini auto per l'allineamento a sinistra */
+        
+        /* Rimuoviamo il padding qui, ora gestito da .short-film-content-wrapper */
+        padding: 0; 
+        max-width: none; 
+        width: 100%; 
+        margin: 0; 
+    }
+
+    .short-film-content-wrapper {
+        padding: 0 10px; /* Aria laterale per tutta la sezione di testo, incluso il titolo */
     }
     
     /* Assicuriamoci che anche il sottotitolo sia corretto */
+    /* Assicuriamoci che anche il sottotitolo sia corretto */
     .short-film-subtitle {
-         padding: 0 10px; /* Aggiungiamo padding come per il titolo */
-         text-align: center; /* Manteniamo il sottotitolo centrato */
+         padding: 0; /* Rimuovi il padding laterale applicato prima */
+         text-align: center; 
+         /* white-space: nowrap; Rimuoviamo anche qui per evitare overflow */
     }
 
     /* 1. Sottotitolo "Progetto in digitale 3D" su una sola riga */
-    .protettore-subtitle-1 {
-        /* Rimuovi i margini laterali per dare più spazio */
+   .protettore-subtitle-1 {
         margin-left: 0; 
         margin-right: 0;
-        text-align: center; /* Mantiene il sottotitolo centrato */
+        text-align: center; 
         
-        /* Forza il testo a non andare a capo */
-        white-space: nowrap; 
-        overflow: hidden; /* Nasconde l'eccesso se proprio non ci sta */
-        text-overflow: ellipsis; /* Aggiunge i puntini se viene tagliato */
+        /* Rimuovi queste tre righe che causavano il troncamento: */
+        /* white-space: nowrap; */ 
+        /* overflow: hidden; */ 
+        /* text-overflow: ellipsis; */ 
         
-        /* Aggiungi padding orizzontale per 'aria' */
+        /* Permetti al testo di andare a capo in modo normale */
+        white-space: normal;
+        
+        /* Aggiungi padding orizzontale per 'aria' e staccarlo dai bordi */
         padding: 0 10px; 
     }
 
