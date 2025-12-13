@@ -1412,6 +1412,8 @@ body {
         /* Rimuovi la regola 'overflow-x: hidden;' se l'avevi messa qui */
     }
 
+    
+
     .bottom-half {
         padding-top: 50px; 
         padding-bottom: 50px; 
@@ -1420,6 +1422,13 @@ body {
         padding-right: 0; 
     }
 
+
+    /* Rimuove il margine superiore del testo descrittivo per prevenire il collasso e la "striscia bianca" */
+.short-film-text > p:first-child,
+.short-film-text {
+    margin-top: 60px;
+    padding-top: 100px; /* Opzionale, se avesse un padding top */
+}
     .short-film-image {
         height: 350px;
     }
@@ -1428,14 +1437,32 @@ body {
         padding: 0 0; /* Azzeriamo il padding laterale qui */
     }
 
-   /* Titolo e Sottotitolo: devono essere centrati e non avere padding laterali aggiuntivi */
-    .short-film-title, .short-film-subtitle {
-        text-align: center;
-        padding: 0; /* Rimuovi qualsiasi padding che forzerebbe l'overflow */
-        white-space: normal; /* Permette il ritorno a capo se il titolo è troppo lungo */
-        max-width: 100%; /* Impedisce overflow */
-        margin: 0 auto;
-    }
+.short-film-title {
+    text-align: center;
+    padding: 90px 0px;
+    white-space: normal;
+    max-width: 100%;
+    /* Margine: Top (0), Right (auto), Bottom (5px), Left (auto) */
+    margin: 0 auto 5px auto; 
+}
+
+.short-film-subtitle {
+    text-align: center;
+    /* Rimuovi la padding negativa e il white-space: none non valido */
+    padding : 10px 0px;
+    white-space: normal;
+    max-width: 100%;
+    /* Margine: Top (0), Bottom (0) */
+    margin: 0 auto; 
+}
+
+/* ELIMINA OGNI MARGINE/PADDING SUPERIORE DALL'ELEMENTO TESTO */
+.short-film-text > p:first-child,
+.short-film-text > div:first-child,
+.short-film-text {
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+}
 .short-film-content-wrapper.bottom-half .short-film-text {
         /* Allinea il testo a sinistra */
         text-align: left; 
@@ -1559,6 +1586,13 @@ body {
     
     /* ... il resto del tuo codice esistente ... */
     }
+
+    /* Rimuove i margini superiori di default del testo descrittivo 
+   per prevenire la "striscia bianca" e far sì che si "attacchi" al sottotitolo. */
+.short-film-text > p:first-child,
+.short-film-text > div:first-child {
+    margin-top: 0;
+}
 }
 
 
