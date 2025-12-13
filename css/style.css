@@ -660,12 +660,13 @@ body {
 
 /* Sottotitolo "Sviluppo" */
 .protettore-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Abril Fatface', sans-serif;
     font-weight: 600; 
-    font-size: 25px;
+    font-size: 24px;
     color: #712F26; 
     margin-top: -9px;
     margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
 /* Testo Descrittivo */
