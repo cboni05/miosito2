@@ -1404,9 +1404,20 @@ body {
     }
 
     /* Sezione Cortometraggio */
-    .top-half, .bottom-half {
-        padding-top: 50px;
-        padding-bottom: 50px;
+    .top-half {
+        padding-top: 50px; 
+        padding-bottom: 50px; 
+        padding-left: 20px;  /* Aria laterale di 20px */
+        padding-right: 20px; /* Aria laterale di 20px */
+        /* Rimuovi la regola 'overflow-x: hidden;' se l'avevi messa qui */
+    }
+
+    .bottom-half {
+        padding-top: 50px; 
+        padding-bottom: 50px; 
+        /* Rimuovi padding laterale da qui */
+        padding-left: 0; 
+        padding-right: 0; 
     }
 
     .short-film-image {
@@ -1417,39 +1428,33 @@ body {
         padding: 0 0; /* Azzeriamo il padding laterale qui */
     }
 
-    /* 1. Aria intorno al TITOLO (senza mandarlo a capo) */
-   .short-film-title {
-        /* Rimuovi: padding: 0 10px; */
-        padding: 0; /* Rimuovi qualsiasi padding laterale dal titolo */
-        
-        /* Rimuovi: display: inline-block; */
-        /* Rimuovi: white-space: nowrap; <--- ERA IL PROBLEMA PRINCIPALE! */
-        white-space: normal; /* Permette al testo di andare a capo se necessario */
-        max-width: 100%; /* Assicura che non forzi la larghezza */
-        text-align: center; /* Mantieni il testo centrato */
+   /* Titolo e Sottotitolo: devono essere centrati e non avere padding laterali aggiuntivi */
+    .short-film-title, .short-film-subtitle {
+        text-align: center;
+        padding: 0; /* Rimuovi qualsiasi padding che forzerebbe l'overflow */
+        white-space: normal; /* Permette il ritorno a capo se il titolo è troppo lungo */
+        max-width: 100%; /* Impedisce overflow */
+        margin: 0 auto;
     }
-
-    .short-film-content-wrapper.bottom-half .short-film-text {
-        text-align: left; /* Allinea il testo a sinistra */
+.short-film-content-wrapper.bottom-half .short-film-text {
+        /* Allinea il testo a sinistra */
+        text-align: left; 
         
-        /* Rimuoviamo il padding qui, ora gestito da .short-film-content-wrapper */
-        padding: 0; 
-        max-width: none; 
-        width: 100%; 
-        margin: 0; 
+        /* Assicurati che il contenitore occupi la larghezza completa disponibile */
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        
+        /* Aggiungi padding laterale per separare il testo dai bordi del cellulare */
+        padding-left: 20px; /* Margine sinistro */
+        padding-right: 20px; /* Margine destro */
+        
+        box-sizing: border-box; /* Cruciale: assicura che il padding non causi overflow */
     }
-
     .short-film-content-wrapper {
         padding: 0 10px; /* Aria laterale per tutta la sezione di testo, incluso il titolo */
     }
     
-    /* Assicuriamoci che anche il sottotitolo sia corretto */
-    /* Assicuriamoci che anche il sottotitolo sia corretto */
-    .short-film-subtitle {
-         padding: 0; /* Rimuovi il padding laterale applicato prima */
-         text-align: center; 
-         /* white-space: nowrap; Rimuoviamo anche qui per evitare overflow */
-    }
 
     /* 1. Sottotitolo "Progetto in digitale 3D" su una sola riga */
    .protettore-subtitle-1 {
