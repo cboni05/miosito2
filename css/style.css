@@ -7,7 +7,7 @@ body {
     cursor: default;
 }
 
-.nicla-title, .short-film-title, .protettore-title, .hubstoria-title, .hobby-main-title, .portfolio-main-title, .origins-title, chi-sono-title, .short-film-subtitle {
+.nicla-title, .short-film-title, .protettore-title, .hubstoria-title, .hubstoria-subtitle .hobby-main-title, .portfolio-main-title, .origins-title, chi-sono-title, .short-film-subtitle, .nicla-subtitle {
     /* NUOVA PROPRIETÀ, puoi aggiungerla a tutti i selettori insieme, se usano lo stesso stile */
     letter-spacing: 1px;
 } 
@@ -445,6 +445,12 @@ body {
     color: #712F26; 
     margin: 0 0 20px 0;
 }
+.nicla-subtitle {
+    font-family: 'Abril Fatface', serif;
+    font-size: 25px; 
+    color: #712F26; 
+    margin: 0 0 20px 0;
+}
 
 .nicla-description {
     font-family: 'Inter', sans-serif;
@@ -724,6 +730,14 @@ body {
 .hubstoria-title {
     font-family: 'Abril Fatface', serif;
     font-size: 48px; 
+    color: #712F26;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.hubstoria-subtitle{
+      font-family: 'Abril Fatface', serif;
+    font-size: 25px; 
     color: #712F26;
     margin-top: 0;
     margin-bottom: 25px;
@@ -1036,6 +1050,9 @@ body {
         width: 100%;
     }
 
+    .nicla-subtitle {
+        font-size: 20px;
+    }
     /* Nicla Steps (Passa a 1 colonna) */
     .nicla-steps-gallery {
         gap: 20px;
@@ -1088,6 +1105,12 @@ body {
         flex: 1 1 100%;
     }
 
+    .hubstoria-subtitle {
+        font-size: 20px;
+    }
+
+
+   
     /* Footer (Layout verticale) */
     .main-footer {
         flex-direction: column;
