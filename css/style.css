@@ -1001,6 +1001,7 @@ body {
         padding-bottom: 10px;
     }
 
+
     .logo {
         margin-bottom: 10px;
         margin-top: 10px;
@@ -1026,6 +1027,15 @@ body {
     .section-text, .origins-text, .nicla-step-text, .protettore-text, .hubstoria-description, .hubstoria-step-text {
         font-size: 16px;
     }
+
+    .protettore-subtitle {
+    font-family: 'Abril Fatface', sans-serif;
+    font-weight: 600; 
+    font-size: 20px;
+    color: #712F26; 
+
+    letter-spacing: 2px;
+}
 
     /* Sezione Origini */
     .origins-text-block {
