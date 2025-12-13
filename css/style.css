@@ -1443,7 +1443,7 @@ body {
         padding: 0;
         
         /* SOLUZIONE: Riduci la dimensione del carattere finché non sta su una riga */
-        font-size: 22px; 
+        font-size: 24px; 
         /* Regola Cruciale: Forza il testo su una singola riga */
         white-space: nowrap !important; 
         /* Nasconde la parte di testo che non ci sta (se succede ancora) */
@@ -1462,6 +1462,7 @@ body {
     max-width: 100%;
     /* Margine: Top (0), Bottom (0). L'unica distanza verticale sarà data dal Titolo. */
     margin: 0 auto; 
+    font-size: 22px;
 }
 
 /* ELIMINA OGNI MARGINE/PADDING SUPERIORE DALL'ELEMENTO TESTO */
